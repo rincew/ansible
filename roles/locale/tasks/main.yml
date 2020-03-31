@@ -1,0 +1,7 @@
+---
+- name: change locale
+  locale_gen:
+    name: en_US.UTF8
+    state: present
+  tags: locale
+  
