@@ -4,6 +4,6 @@
     path: /etc/ssh/sshd_config
     regexp: '#Port 22'
     insertafter: '#Port 22'
-    line: 'Port '2498'
+    line: 'Port 2498'
   tags: sshd
   
