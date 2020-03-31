@@ -1,0 +1,7 @@
+---
+- name: test2 
+  hosts: localhost
+  connection: local
+  roles:
+    - timezone
+    - locale
