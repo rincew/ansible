@@ -3,4 +3,4 @@
   service:
     name: sshd
     state: restarted
-  tag: sshd
+  tags: sshd
