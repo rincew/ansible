@@ -13,5 +13,7 @@
     regexp: '#PermitRootLogin prohibit-password'
     insertafter: '#PermitRootLogin prohibit-password'
     line: 'PermitRootLogin no'
+   notify: 
+     - restart sshd
    tags: sshd
   
