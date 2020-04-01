@@ -6,4 +6,12 @@
     insertafter: '#Port 22'
     line: 'Port 2498'
   tags: sshd
+ 
+- name: deny remote login as root user
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '#PermitRootLogin prohibit-password'
+    insertafter: '#PermitRootLogin prohibit-password'
+    line: 'PermitRootLogin no'
+   tags: sshd
   
