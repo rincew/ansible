@@ -3,10 +3,10 @@
   apt:
     update_cache: yes
     pkg: "{{ item }}"
-    with_items:
-      - nginx
-      - monit
     state: present
+  with_items:
+    - nginx
+    - monit
   notify:
     - enable service
   tags: deploy
