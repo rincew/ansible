@@ -1,7 +1,7 @@
 ---
 - name: enable service
   service:
-    name: {{ item }}
+    name: "{{ item }}"
     with_items:
       - nginx
       - monit
