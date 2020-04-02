@@ -2,11 +2,11 @@
 - name: enable service
   service:
     name: "{{ item }}"
-    with_items:
-      - nginx
-      - monit
     enabled: yes
     state: started
+  with_items:
+    - nginx
+    - monit
 
 - name: restart nginx
   service:
