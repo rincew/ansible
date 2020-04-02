@@ -8,6 +8,7 @@
   tags: user
   
 - name: limited sudo rights
+  become: yes
   lineinfile:
     path: /etc/sudoers
     insertafter: '# User privilege specification'
