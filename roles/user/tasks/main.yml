@@ -1,1 +1,17 @@
 ---
+- name: create user with sudo rights
+  user:
+    name: serviceuser
+    shell: /bin/bash
+    group: sudo
+    password: "{{ pass }}"
+  tags: user
+  
+- name: limited sudo rights
+  lineinfile:
+    path: /home/rincewind/sudoers
+    insertafter: '# User privilege specification'
+    line: 'serviceuser ALL=(ALL) NOPASSWD:/bin/systemctl'
+    state: present
+  tags: user_test
+    
