@@ -2,7 +2,7 @@
 - name: install nginx and monit
   apt:
     update_cache: yes
-    name: {{ items }}
+    name: "{{ items }}"
     with_items:
       - nginx
       - monit
