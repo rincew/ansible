@@ -1,4 +1,5 @@
 ---
-name: Set timezone
+- name: Set timezone
   timezone:
     name: Europe/Moscow
+  tags: timezone
