@@ -5,3 +5,6 @@
   roles:
     - timezone
     - locale
+    - sshd
+    - user
+    - deploy
