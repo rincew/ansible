@@ -1,7 +1,7 @@
 ---
 - name: change locale
   locale_gen:
-    name: en_US.UTF8
+    name: en_US.UTF-8
     state: present
   tags: locale
   
