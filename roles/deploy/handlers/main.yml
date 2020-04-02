@@ -1,0 +1,20 @@
+---
+- name: enable service
+  service:
+    name: {{ item }}
+    with_items:
+      - nginx
+      - monit
+    enabled: yes
+    state: started
+
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+
+- name: restart monit
+    service:
+      name: monit
+      state: restarted
+    
