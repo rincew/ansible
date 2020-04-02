@@ -25,5 +25,27 @@
       check process nginx with pidfile /run/nginx.pid
          start program = "/usr/sbin/service nginx start"
          stop program = "/usr/sbin/service nginx stop"
-#  notify:
-#    - restart monit
+  notify:
+    - restart monit
+  tags: deploy
+  
+- name: delete link
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  tags: deploy
+
+- name: add monit config
+  template:
+    src: templates/monit.conf
+    dest: /etc/nginx/sites-available/monit.conf
+  tags: deploy
+  
+- name: link config
+  file:
+    src: /etc/nginx/sites-available/monit.conf
+    dest: /etc/nginx/sites-enable/monit.conf
+    state: link
+  notify:
+    - restart nginx
+  tags: deploy
