@@ -9,7 +9,7 @@
   
 - name: limited sudo rights
   lineinfile:
-    path: /home/rincewind/sudoers
+    path: /etc/sudoers
     insertafter: '# User privilege specification'
     line: 'serviceuser ALL=(ALL) NOPASSWD:/bin/systemctl'
     state: present
