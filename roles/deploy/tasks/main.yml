@@ -11,3 +11,19 @@
   notify:
     - enable service
   tags: deploy
+  
+- name: config monit
+  become: yes
+  blockinfile:
+    path: /home/rincewind/monitrc
+    block: |
+      set httpd port 2812 and
+      use address localhost
+      allow localhost
+      allow devops:test
+      
+      check process nginx with pidfile /run/nginx.pid
+         start program = "/usr/sbin/service nginx start"
+         stop program = "/usr/sbin/service nginx stop"
+#  notify:
+#    - restart monit
