@@ -15,7 +15,7 @@
 - name: config monit
   become: yes
   blockinfile:
-    path: /home/rincewind/monitrc
+    path: /etc/monit/monitrc
     block: |
       set httpd port 2812 and
       use address localhost
