@@ -47,7 +47,7 @@
   become: yes
   file:
     src: /etc/nginx/sites-available/monit.conf
-    dest: /etc/nginx/sites-enable/monit.conf
+    dest: /etc/nginx/sites-enabled/monit.conf
     state: link
   notify:
     - restart nginx
