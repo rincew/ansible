@@ -30,18 +30,21 @@
   tags: deploy
   
 - name: delete link
+  become: yes
   file:
     path: /etc/nginx/sites-enabled/default
     state: absent
   tags: deploy
 
 - name: add monit config
+  become: yes
   template:
     src: templates/monit.conf
     dest: /etc/nginx/sites-available/monit.conf
   tags: deploy
   
 - name: link config
+  become: yes
   file:
     src: /etc/nginx/sites-available/monit.conf
     dest: /etc/nginx/sites-enable/monit.conf
